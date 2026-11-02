@@ -1,14 +1,16 @@
 Tester 2022/ICT/78 — Selenium UI Testing: Task Manager
 
-<div align="center">"Java" (https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-"Selenium" (https://img.shields.io/badge/Selenium-4.51.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-"JUnit" (https://img.shields.io/badge/JUnit-5.13.4-25A162?style=for-the-badge&logo=junit5&logoColor=white)
-"Maven" (https://img.shields.io/badge/Maven-3-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+"Java 21" (https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+"Selenium 4.51.0" (https://img.shields.io/badge/Selenium-4.51.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+"JUnit 5.13.4" (https://img.shields.io/badge/JUnit-5.13.4-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+"Maven 3" (https://img.shields.io/badge/Maven-3-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 "Chrome" (https://img.shields.io/badge/Chrome-WebDriver-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
 
 Automated UI testing for a Task Manager web application using Selenium WebDriver, Java, JUnit 5, and Maven.
 
-</div>1. Project Overview
+---
+
+1. Project Overview
 
 This repository contains my individual Selenium UI automation work for the Task Manager application.
 
@@ -27,11 +29,11 @@ The testing covers:
 
 Testing Techniques
 
-- Positive testing
-- Negative testing
+- Positive Testing
+- Negative Testing
 - Boundary Value Analysis
-- Functional testing
-- Input validation testing
+- Functional Testing
+- Input Validation Testing
 
 3. Tester Information
 
