@@ -1,0 +1,455 @@
+{
+  "info": {
+    "_postman_id": "a2f97440-14e1-4c96-bc70-59dbaf278a61",
+    "name": "TaskManager-Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54762591",
+    "_collection_link": "https://go.postman.co/collection/54762591-a2f97440-14e1-4c96-bc70-59dbaf278a61?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register_TestUser",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Uthsara Dewmini\",\r\n    \"email\": \"uthsara@gmail.com\",\r\n    \"password\": \"Test123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC01 - Login with Wrong Password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify status code\r\npm.test(\"Status code is 401\", function () {\r\n    pm.response.to.have.status(401);\r\n});\r\n\r\n// Assertion 2: Verify error message\r\npm.test(\"Invalid credentials message is correct\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response.message)\r\n        .to.eql(\"Invalid email or password\");\r\n});\r\n\r\n// Assertion 3: Verify token is not returned\r\npm.test(\"Token should not be returned\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response).to.not.have.property(\"token\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"uthsara@gmail.com\",\r\n    \"password\": \"WrongPassword123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "TC01 - Login with Wrong Password",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"uthsara@gmail.com\",\r\n    \"password\": \"WrongPassword123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store, no-cache, must-revalidate, private"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"27-Mm37A2ls1bgL0/D8e3MSpDLbow8\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 01 Nov 2026 18:49:26 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Invalid email or password\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "TC02 - Login with Empty Fields",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify status code\r\npm.test(\"Status code is 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});\r\n\r\n// Assertion 2: Verify validation message\r\npm.test(\"Required fields validation works\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response.message)\r\n        .to.eql(\"Email and password are required\");\r\n});\r\n\r\n// Assertion 3: Verify no token is returned\r\npm.test(\"No JWT token is generated\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response).to.not.have.property(\"token\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC03 - Successful Login and JWT Generation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify successful login\r\npm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n// Get response data\r\nconst data = pm.response.json();\r\npm.collectionVariables.set(\"userId\", data._id);\r\n\r\n// Assertion 2: Verify user ID\r\npm.test(\"User ID exists\", function () {\r\n    pm.expect(data._id).to.be.a(\"string\").and.not.empty;\r\n});\r\n\r\n// Assertion 3: Verify user name\r\npm.test(\"User name is correct\", function () {\r\n    pm.expect(data.name).to.eql(\"Postman Tester\");\r\n});\r\n\r\n// Assertion 4: Verify email\r\npm.test(\"User email is correct\", function () {\r\n    pm.expect(data.email).to.eql(\"postmantest@gmail.com\");\r\n});\r\n\r\n// Assertion 5: Verify JWT token exists\r\npm.test(\"JWT token is generated\", function () {\r\n    pm.expect(data.token).to.be.a(\"string\").and.not.empty;\r\n});\r\n\r\n// Assertion 6: Verify JWT structure\r\npm.test(\"JWT has three parts\", function () {\r\n    pm.expect(data.token.split(\".\")).to.have.lengthOf(3);\r\n});\r\n\r\n// Save token for TC04\r\npm.collectionVariables.set(\"token\", data.token);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"uthsara@gmail.com\",\r\n    \"password\": \"Test123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC04 - Access Tasks with Valid JWT",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify status code\r\npm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n// Get response data\r\nconst data = pm.response.json();\r\n\r\n// Assertion 2: Verify response is an array\r\npm.test(\"Response contains a task list\", function () {\r\n    pm.expect(data).to.be.an(\"array\");\r\n});\r\n\r\n// Assertion 3: Verify all tasks belong to the logged-in user\r\npm.test(\"Tasks belong to the authenticated user\", function () {\r\n    const userId = pm.collectionVariables.get(\"userId\");\r\n\r\n    data.forEach(function(task) {\r\n        pm.expect(String(task.user)).to.eql(userId);\r\n    });\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC05 - Access Tasks with Invalid JWT",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify unauthorized status\r\npm.test(\"Status code is 401\", function () {\r\n    pm.response.to.have.status(401);\r\n});\r\n\r\n// Assertion 2: Verify token error message\r\npm.test(\"Invalid token is rejected\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response.message)\r\n        .to.eql(\"Not authorized, token failed\");\r\n});\r\n\r\n// Assertion 3: Verify no task data is returned\r\npm.test(\"Protected data is not accessible\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response).to.not.be.an(\"array\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "abc.def.ghi",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC06-Update Task with Valid JWT",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify successful update\r\npm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n// Assertion 2: Verify updated task title\r\npm.test(\"Task title is updated\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response.title)\r\n        .to.eql(\"Updated Task - Postman Testing\");\r\n});\r\n\r\n// Assertion 3: Verify updated task status\r\npm.test(\"Task status is updated\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response.status).to.eql(\"In Progress\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Updated Task - Postman Testing\",\r\n    \"deadline\": \"2026-11-15T00:00:00.000Z\",\r\n    \"status\": \"In Progress\",\r\n    \"priority\": \"High\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks/6ae85b5f8e7c5757cd3233cc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "tasks",
+            "6ae85b5f8e7c5757cd3233cc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Setup - Create Test Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Postman Automation Test Task\",\r\n    \"description\": \"Task created for TC06 and TC07\",\r\n    \"deadline\": \"2026-11-15T00:00:00.000Z\",\r\n    \"priority\": \"High\",\r\n    \"status\": \"Pending\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks/create",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "tasks",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC07 - Update Task with Invalid JWT",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Assertion 1: Verify unauthorized status\r\npm.test(\"Status code is 401\", function () {\r\n    pm.response.to.have.status(401);\r\n});\r\n\r\n// Assertion 2: Verify invalid token is rejected\r\npm.test(\"Invalid JWT is rejected\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response.message)\r\n        .to.eql(\"Not authorized, token failed\");\r\n});\r\n\r\n// Assertion 3: Verify task was not updated\r\npm.test(\"Unauthorized update is blocked\", function () {\r\n    pm.expect(pm.response.code).to.eql(401);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "abc.def.ghi",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Updated Task - Postman Testing\",\r\n    \"deadline\": \"2026-11-15T00:00:00.000Z\",\r\n    \"status\": \"In Progress\",\r\n    \"priority\": \"High\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks/6ae85b5f8e7c5757cd3233cc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "tasks",
+            "6ae85b5f8e7c5757cd3233cc"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "json_web_token_0xgg",
+      "secret": true
+    },
+    {
+      "key": "userId",
+      "value": ""
+    }
+  ]
+}
