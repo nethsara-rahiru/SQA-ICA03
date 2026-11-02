@@ -1,4 +1,6 @@
 
+# Tester 2022/ICT/78 — Selenium UI Testing
+
 <div align="center">
 
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
@@ -13,90 +15,99 @@ Automated browser testing using Selenium WebDriver, Java, JUnit 5, and Maven.
 
 </div>
 
+---
 
-Table of Contents
+## Table of Contents
 
-1. "Student Information" (#1-student-information)
-2. "Project Overview" (#2-project-overview)
-3. "Application Under Test" (#3-application-under-test)
-4. "Testing Scope" (#4-testing-scope)
-5. "Tools and Technologies" (#5-tools-and-technologies)
-6. "Project Structure" (#6-project-structure)
-7. "Automated UI Test Cases" (#7-automated-ui-test-cases)
-8. "Boundary-Value Test Details" (#8-boundary-value-test-details)
-9. "Running the Selenium Tests" (#9-running-the-selenium-tests)
-10. "Test Evidence and Screenshots" (#10-test-evidence-and-screenshots)
-11. "UI Bug Reporting" (#11-ui-bug-reporting)
-12. "UI Test Execution Summary" (#12-ui-test-execution-summary)
-13. "Shared Test Documentation" (#13-shared-test-documentation)
-14. "Assignment Submission Checklist" (#14-assignment-submission-checklist)
-15. "Responsible Testing and Security" (#15-responsible-testing-and-security)
-16. "Learning and Development" (#16-learning-and-development)
+- [1. Student Information](#1-student-information)
+- [2. Project Overview](#2-project-overview)
+- [3. Application Under Test](#3-application-under-test)
+- [4. Testing Scope](#4-testing-scope)
+- [5. Tools and Technologies](#5-tools-and-technologies)
+- [6. Project Structure](#6-project-structure)
+- [7. Automated UI Test Cases](#7-automated-ui-test-cases)
+- [8. Boundary-Value Test Details](#8-boundary-value-test-details)
+- [9. Running the Selenium Tests](#9-running-the-selenium-tests)
+- [10. Test Evidence and Screenshots](#10-test-evidence-and-screenshots)
+- [11. UI Bug Reporting](#11-ui-bug-reporting)
+- [12. UI Test Execution Summary](#12-ui-test-execution-summary)
+- [13. Shared Test Documentation](#13-shared-test-documentation)
+- [14. Assignment Submission Checklist](#14-assignment-submission-checklist)
+- [15. Responsible Testing and Security](#15-responsible-testing-and-security)
+- [16. Learning and Development](#16-learning-and-development)
 
 ---
 
-1. Student Information
+## 1. Student Information
 
-Detail| Information
-Student Name| U.G.H.S. Ranasingha
-Registration Number| 2022/ICT/78
-Course| Software Testing and Automation
-Testing Area| UI Testing
-Testing Tool| Selenium WebDriver with Java
-Test Framework| JUnit 5
-Build Tool| Apache Maven
-GitHub Profile| "HarshiSRanasingha" (https://github.com/HarshiSRanasingha)
+| Detail | Information |
+|---|---|
+| Student Name | U.G.H.S. Ranasingha |
+| Registration Number | 2022/ICT/78 |
+| Course | Software Testing and Automation |
+| Testing Area | UI Testing |
+| Testing Tool | Selenium WebDriver with Java |
+| Test Framework | JUnit 5 |
+| Build Tool | Apache Maven |
+| GitHub Profile | [HarshiSRanasingha](https://github.com/HarshiSRanasingha) |
 
-2. Project Overview
+---
 
-This repository contains my individual UI testing work for the Task Manager web application, which was developed in a previous semester.
+## 2. Project Overview
 
-The project focuses on verifying the application's user interface and functionality through automated browser interactions using Selenium WebDriver and Java.
+This repository contains my individual UI testing work for the Task Manager web application, developed in a previous semester.
+
+The project focuses on testing the application's user interface and functionality through automated browser interactions using Selenium WebDriver and Java.
 
 The automated tests cover registration validation, password boundaries, task management operations, task status handling, and task creation cancellation.
 
-Project Features
+### Project Features
 
-- Selenium WebDriver automation scripts written in Java.
+- Selenium Java automation scripts.
 - Positive, negative, and boundary-value test scenarios.
-- JUnit 5 assertions and test execution.
-- Test case documentation and execution results.
+- JUnit 5 assertions and execution results.
+- Test case documentation.
 - Screenshots and execution evidence.
 - Test observations and potential defect identification.
 - Maven-based dependency management and test execution.
 
-Note: Postman API testing and Apache JMeter performance testing are maintained separately as part of the overall Software Testing and Automation assignment.
+**Note:** Postman API testing and Apache JMeter performance testing are maintained separately as part of the overall Software Testing and Automation assignment.
 
-3. Application Under Test
+---
+
+## 3. Application Under Test
 
 The application selected for testing is the Task Manager web application developed in a previous semester.
 
-Detail| Information
-Application Name| Task Manager
-Application Type| Web Application
-Application Repository| "TaskManager – GitHub" (https://github.com/ArunPragas2001/TaskManager)
-Base URL| "http://localhost:8000"
-Registration Page| "http://localhost:8000/register.html"
-Dashboard Page| "http://localhost:8000/dashboard.html"
-Testing Environment| Localhost
-Test Account| Dynamically generated by Selenium tests
+| Detail | Information |
+|---|---|
+| Application Name | Task Manager |
+| Application Type | Web Application |
+| Application Repository | [TaskManager – GitHub](https://github.com/ArunPragas2001/TaskManager) |
+| Base URL | `http://localhost:8000` |
+| Registration Page | `http://localhost:8000/register.html` |
+| Dashboard Page | `http://localhost:8000/dashboard.html` |
+| Testing Environment | Localhost |
+| Test Account | Dynamically generated by Selenium tests |
 
 Testing is performed on the local application using authorized test accounts and disposable test data.
 
 The application must be running before executing the automated tests.
 
-4. Testing Scope
+---
+
+## 4. Testing Scope
 
 The UI testing activities focus on the following areas.
 
-4.1 Registration and Input Validation
+### 4.1 Registration and Input Validation
 
 - Validate email addresses during registration.
 - Test invalid email formats.
 - Verify password minimum-length validation.
 - Test password boundary values.
 
-4.2 Task Management
+### 4.2 Task Management
 
 - Create and manage tasks.
 - Move tasks between status columns.
@@ -105,14 +116,14 @@ The UI testing activities focus on the following areas.
 - Verify task status display.
 - Cancel task creation.
 
-4.3 Boundary and Negative Testing
+### 4.3 Boundary and Negative Testing
 
 - Test values below and at the expected minimum boundary.
 - Test values at and above the expected maximum boundary.
 - Verify invalid inputs and application responses.
 - Record unexpected acceptance or rejection of input values.
 
-4.4 Browser and UI Behaviour
+### 4.4 Browser and UI Behaviour
 
 - Verify page navigation.
 - Check modal behaviour.
@@ -120,25 +131,31 @@ The UI testing activities focus on the following areas.
 - Validate browser-side form behaviour.
 - Confirm that cancelled changes are not saved.
 
-Scope limitation: A dedicated login automation test is not currently included in the confirmed test-case list. Login coverage can be added as a separate test case.
+**Scope limitation:** A dedicated login automation test is not currently included in the confirmed test-case list. Login coverage can be added separately.
 
-5. Tools and Technologies
+---
 
-Tool / Technology| Version / Configuration| Purpose
-Java| JDK 21| Programming language
-Selenium WebDriver| 4.51.0| Browser automation
-JUnit Jupiter| 5.13.4| Test execution and assertions
-Apache Maven| 3.x| Dependency management and test execution
-Google Chrome| Installed version| Browser under test
-ChromeDriver| Selenium Manager| Browser-driver management
-IntelliJ IDEA| 2026.2.4| Development environment
+## 5. Tools and Technologies
 
-The versions listed above describe the intended project configuration. Verify the installed versions and the dependencies in "pom.xml" before submission.
+| Tool / Technology | Version / Configuration | Purpose |
+|---|---|---|
+| Java | JDK 21 | Programming language |
+| Selenium WebDriver | 4.51.0 | Browser automation |
+| JUnit Jupiter | 5.13.4 | Test execution and assertions |
+| Apache Maven | 3.x | Dependency management and test execution |
+| Google Chrome | Installed version | Browser under test |
+| ChromeDriver | Selenium Manager | Browser-driver management |
+| IntelliJ IDEA | 2026.2.4 | Development environment |
 
-6. Project Structure
+The versions listed above describe the intended project configuration. Verify the installed versions and dependencies in `pom.xml` before submission.
 
-The project is organized as follows:
+---
 
+## 6. Project Structure
+
+The documented project structure is shown below.
+
+```text
 SeleniumUITestion_TaskManager/
 │
 ├── pom.xml
@@ -178,178 +195,198 @@ SeleniumUITestion_TaskManager/
     ├── TC007_DeleteTaskTest.png
     ├── TC008_TaskStatusDisplayTest.png
     └── TC009_TaskCreationCancelTest.png
+```
 
-This structure represents the documented project layout. Ensure the directory and filenames match the actual files committed to GitHub.
+Ensure that the filenames and directories match the actual files committed to GitHub.
 
-7. Automated UI Test Cases
+---
+
+## 7. Automated UI Test Cases
 
 The following nine test cases are documented in this project.
 
-Test Case ID| Scenario| Testing Type
-TC-001| Remove "@" from the email address during registration| Negative
-TC-002| Register using an email without ".com"| Negative
-TC-003| Verify password length boundaries| Boundary
-TC-004| Verify task-name length boundaries| Boundary
-TC-005| Move a task from Pending to In Progress| Functional / Positive
-TC-006| Edit an existing task| Functional / Positive
-TC-007| Delete an existing task| Functional / Positive
-TC-008| Verify tasks appear in their correct status columns| Functional / Positive
-TC-009| Verify task creation cancellation| Functional / Negative
+| Test Case ID | Scenario | Testing Type |
+|---|---|---|
+| TC-001 | Remove `@` from the email address during registration | Negative |
+| TC-002 | Register using an email without `.com` | Negative |
+| TC-003 | Verify password length boundaries | Boundary |
+| TC-004 | Verify task-name length boundaries | Boundary |
+| TC-005 | Move a task from Pending to In Progress | Functional / Positive |
+| TC-006 | Edit an existing task | Functional / Positive |
+| TC-007 | Delete an existing task | Functional / Positive |
+| TC-008 | Verify tasks appear in their correct status columns | Functional / Positive |
+| TC-009 | Verify task creation cancellation | Functional / Negative |
 
-7.1 Test Execution Status
+### 7.1 Test Execution Status
 
 The following results reflect the execution information currently available.
 
-Test Case ID| Execution Result| Observation
-TC-001| PASS| Chrome HTML5 validation rejected an email without "@".
-TC-002| PASS| The application backend rejected the tested email format without ".com".
-TC-003| PARTIAL / REVIEW| Five-character passwords were rejected and longer tested values were accepted. Maximum-length behaviour requires confirmation against requirements.
-TC-004| FAIL against assumed boundaries| Two-character and 51-character task names were accepted. Confirm the expected limits before classifying them as defects.
-TC-005| PASS| Task successfully moved from Pending to In Progress.
-TC-006| Awaiting confirmation| Test script prepared; execution result not yet confirmed.
-TC-007| Awaiting confirmation| Test script prepared; execution result not yet confirmed.
-TC-008| PASS| Tasks appeared in their correct status columns.
-TC-009| PASS| The cancelled task was not saved, including after refreshing the dashboard.
+| Test Case ID | Execution Result | Observation |
+|---|---|---|
+| TC-001 | PASS | Chrome HTML5 validation rejected an email without `@`. |
+| TC-002 | PASS | The application backend rejected the tested email format without `.com`. |
+| TC-003 | PARTIAL / REVIEW | Five-character passwords were rejected; longer tested values were accepted. Maximum-length behaviour requires confirmation. |
+| TC-004 | FAIL against assumed boundaries | Two-character and 51-character task names were accepted. Confirm the expected limits before classifying them as defects. |
+| TC-005 | PASS | Task successfully moved from Pending to In Progress. |
+| TC-006 | Awaiting confirmation | Test script prepared; execution result not yet confirmed. |
+| TC-007 | Awaiting confirmation | Test script prepared; execution result not yet confirmed. |
+| TC-008 | PASS | Tasks appeared in their correct status columns. |
+| TC-009 | PASS | The cancelled task was not saved, including after refreshing the dashboard. |
 
-Important: A test failure against an assumed boundary does not automatically establish a genuine application defect. The expected behaviour must be supported by the application's requirements or agreed specifications.
+**Important:** A test failure against an assumed boundary does not automatically establish a genuine application defect. Expected behaviour must be supported by the application's requirements or agreed specifications.
 
-8. Boundary-Value Test Details
+---
 
-8.1 TC-003 – Password Length Boundary Testing
+## 8. Boundary-Value Test Details
+
+### 8.1 TC-003 – Password Length Boundary Testing
 
 This test checks how the registration form handles passwords of different lengths.
 
-Test ID| Password Length| Observed Result
-TC003-01| 5 characters| Rejected
-TC003-02| 6 characters| Accepted
-TC003-03| 7 characters| Accepted
-TC003-04| 11 characters| Accepted
-TC003-05| 12 characters| Accepted
-TC003-06| 13 characters| Accepted
+| Test ID | Password Length | Observed Result |
+|---|---:|---|
+| TC003-01 | 5 characters | Rejected |
+| TC003-02 | 6 characters | Accepted |
+| TC003-03 | 7 characters | Accepted |
+| TC003-04 | 11 characters | Accepted |
+| TC003-05 | 12 characters | Accepted |
+| TC003-06 | 13 characters | Accepted |
 
-Observation:
+**Observation:**
 
 - The application rejected a five-character password.
 - Passwords containing six or more characters were accepted in the tested range.
 - The minimum accepted password length observed was six characters.
-- A maximum password length of twelve characters was initially assumed, but the application accepted thirteen characters.
+- A maximum length of twelve characters was initially assumed, but the application accepted thirteen characters.
 
-Conclusion: The minimum accepted length observed is six characters. The maximum-length expectation must be verified against the actual application requirements before reporting a defect.
+**Conclusion:** The minimum accepted length observed is six characters. The maximum-length expectation must be verified against the actual requirements before reporting a defect.
 
-8.2 TC-004 – Task Name Length Boundary Testing
+### 8.2 TC-004 – Task Name Length Boundary Testing
 
 This test checks how the application handles task titles with different character lengths.
 
-Test ID| Task Name Length| Expected Result| Actual Result
-TC004-01| 2 characters| Rejected| Accepted
-TC004-02| 3 characters| Accepted| Accepted
-TC004-03| 4 characters| Accepted| Accepted
-TC004-04| 49 characters| Accepted| Accepted
-TC004-05| 50 characters| Accepted| Accepted
-TC004-06| 51 characters| Rejected| Accepted
+| Test ID | Task Name Length | Expected Result | Actual Result |
+|---|---:|---|---|
+| TC004-01 | 2 characters | Rejected | Accepted |
+| TC004-02 | 3 characters | Accepted | Accepted |
+| TC004-03 | 4 characters | Accepted | Accepted |
+| TC004-04 | 49 characters | Accepted | Accepted |
+| TC004-05 | 50 characters | Accepted | Accepted |
+| TC004-06 | 51 characters | Rejected | Accepted |
 
-Execution Summary:
+**Execution Summary:**
 
 - Total boundary scenarios: 6
 - Expected-result matches: 4
 - Expected-result mismatches: 2
 
-Observation:
+**Observation:** The application accepted all tested task-name lengths, including two and 51 characters.
 
-The application accepted all tested task-name lengths, including two and 51 characters.
+The expected minimum of three characters and maximum of 50 characters were test assumptions. Confirm these limits against the application's documented requirements before reporting genuine defects.
 
-The expected minimum of three characters and maximum of 50 characters were test assumptions. They must be confirmed against the application's documented requirements before the mismatches are reported as genuine defects.
+---
 
-9. Running the Selenium Tests
+## 9. Running the Selenium Tests
 
-9.1 Prerequisites
+### 9.1 Prerequisites
 
-Before executing the automated tests, ensure that the following are installed and configured:
+Before executing the automated tests, ensure that the following are installed:
 
 1. Java JDK 21.
 2. Apache Maven.
 3. Google Chrome.
 4. IntelliJ IDEA or another Java IDE.
-5. Selenium WebDriver and JUnit dependencies configured in "pom.xml".
+5. Selenium and JUnit dependencies configured in `pom.xml`.
 
-Verify the Java and Maven installations by opening a terminal and running:
+Verify Java and Maven by running:
 
+```bash
 java -version
 mvn -version
+```
 
-Both commands should display the installed versions without errors.
-
-9.2 Start the Application
+### 9.2 Start the Application
 
 1. Open the Task Manager application repository.
-
 2. Follow its setup instructions to start the backend and frontend.
-
 3. Confirm that the application is available at:
-   
-   "http://localhost:8000"
+
+   `http://localhost:8000`
 
 4. Open the registration page in Chrome:
-   
-   "http://localhost:8000/register.html"
 
-5. Ensure that the application is running before starting the Selenium tests.
+   `http://localhost:8000/register.html`
 
-Note: The setup commands depend on the application's actual backend and frontend configuration. Refer to the application's repository instructions.
+5. Ensure the application is running before starting Selenium tests.
 
-9.3 Run All Selenium Tests
+**Note:** The commands required to start the application depend on its actual backend and frontend configuration.
+
+### 9.3 Run All Selenium Tests
 
 Open a terminal in the Selenium project directory and execute:
 
+```bash
 mvn clean test
+```
 
-This command cleans the previous Maven build output and executes the tests configured for the project.
+This command cleans the previous build output and executes the tests configured for the project.
 
-9.4 Run an Individual Test Case
+### 9.4 Run an Individual Test Case
 
-To execute TC-005:
+**TC-005 – Move Task Button Test**
 
+```bash
 mvn -Dtest=TC005_MoveTaskButtonTest test
+```
 
-To execute TC-008:
+**TC-008 – Task Status Display Test**
 
+```bash
 mvn -Dtest=TC008_TaskStatusDisplayTest test
+```
 
-To execute TC-009:
+**TC-009 – Task Creation Cancellation Test**
 
+```bash
 mvn -Dtest=TC009_TaskCreationCancelTest test
+```
 
 The test class names must match the actual Java filenames and JUnit configuration.
 
-9.5 Test Execution Reports
+### 9.5 Test Execution Reports
 
 Maven Surefire reports are normally generated in:
 
+```text
 target/surefire-reports/
+```
 
-Review these reports to check:
+These reports can be used to review:
 
 - The number of tests executed.
 - Passed and failed tests.
 - Errors and skipped tests.
 - Failure messages and stack traces.
 
-Use the actual JUnit and Maven execution results when updating the final report.
+Use the actual execution reports when updating the final results.
 
-10. Test Evidence and Screenshots
+---
 
-Screenshots and execution evidence are maintained in the "Screen Shots/" directory.
+## 10. Test Evidence and Screenshots
 
-Test Case| Evidence File
-TC-001| "TC001_EmailValidationWithoutAtSign.png"
-TC-002| "TC002_EmailValidationTestWithout_com.png"
-TC-003| "TC003_PasswordLengthBoundaryTest.png"
-TC-004| "TC004_TaskNameLengthBoundaryTest.png"
-TC-005| "TC005_MoveTaskButtonTest.png"
-TC-006| "TC006_EditTaskTest.png"
-TC-007| "TC007_DeleteTaskTest.png"
-TC-008| "TC008_TaskStatusDisplayTest.png"
-TC-009| "TC009_TaskCreationCancelTest.png"
+Screenshots and execution evidence are maintained in the `Screen Shots/` directory.
+
+| Test Case | Evidence File |
+|---|---|
+| TC-001 | `TC001_EmailValidationWithoutAtSign.png` |
+| TC-002 | `TC002_EmailValidationTestWithout_com.png` |
+| TC-003 | `TC003_PasswordLengthBoundaryTest.png` |
+| TC-004 | `TC004_TaskNameLengthBoundaryTest.png` |
+| TC-005 | `TC005_MoveTaskButtonTest.png` |
+| TC-006 | `TC006_EditTaskTest.png` |
+| TC-007 | `TC007_DeleteTaskTest.png` |
+| TC-008 | `TC008_TaskStatusDisplayTest.png` |
+| TC-009 | `TC009_TaskCreationCancelTest.png` |
 
 Evidence should demonstrate the actual test execution, relevant application state, and test result.
 
@@ -363,21 +400,24 @@ For each test case, capture evidence that helps demonstrate:
 
 Ensure that screenshots do not expose passwords, access tokens, API keys, or other sensitive information.
 
-11. UI Bug Reporting
+---
+
+## 11. UI Bug Reporting
 
 During testing, unexpected application behaviour is recorded and investigated.
 
-A failed test does not automatically mean that a genuine application defect exists. The expected behaviour must first be supported by the application's requirements or agreed specifications.
+A failed test does not automatically mean that a genuine application defect exists. Expected behaviour must first be supported by the application's requirements or agreed specifications.
 
-11.1 UI Bug Register
+### 11.1 UI Bug Register
 
-Bug ID| Bug Summary| Severity| Priority| Status| Evidence
-UI-001| To be completed after defect verification| —| —| Not confirmed| —
-UI-002| To be completed after defect verification| —| —| Not confirmed| —
+| Bug ID | Bug Summary | Severity | Priority | Status | Evidence |
+|---|---|---|---|---|---|
+| UI-001 | To be completed after defect verification | — | — | Not confirmed | — |
+| UI-002 | To be completed after defect verification | — | — | Not confirmed | — |
 
 These entries are placeholders, not confirmed defects.
 
-11.2 Bug Report Information
+### 11.2 Bug Report Information
 
 Each confirmed UI bug should include:
 
@@ -393,7 +433,7 @@ Each confirmed UI bug should include:
 - Screenshot or video evidence.
 - Related test case ID.
 
-11.3 Defect Verification
+### 11.3 Defect Verification
 
 Before reporting a potential defect:
 
@@ -406,37 +446,44 @@ Before reporting a potential defect:
 
 If two genuine UI defects cannot be identified after reasonable testing, document the investigation and findings rather than fabricating defects.
 
-12. UI Test Execution Summary
+---
+
+## 12. UI Test Execution Summary
 
 Complete this section after executing and reviewing the full Selenium test suite.
 
-Metric| Current Documentation
-Total documented test cases| 9
-Confirmed passed test cases| 5
-Test cases requiring review or confirmation| 4
-Test execution date| 01–02 November 2026
-Browser| Google Chrome
-Programming Language| Java 21
-Automation Tool| Selenium WebDriver 4.51.0
-Test Framework| JUnit 5.13.4
-Application URL| "http://localhost:8000"
+| Metric | Current Documentation |
+|---|---|
+| Total documented test cases | 9 |
+| Confirmed passed test cases | 5 |
+| Test cases requiring review or confirmation | 4 |
+| Test execution date | 01–02 November 2026 |
+| Browser | Google Chrome |
+| Programming Language | Java 21 |
+| Automation Tool | Selenium WebDriver 4.51.0 |
+| Test Framework | JUnit 5.13.4 |
+| Application URL | `http://localhost:8000` |
 
-Note: This is a documentation-progress summary, not a consolidated JUnit suite result.
+**Note:** This is a documentation-progress summary, not a consolidated JUnit suite result.
 
-TC-003 and TC-004 contain multiple boundary scenarios. TC-006 and TC-007 still require execution confirmation. Update the summary after reviewing the remaining tests, the actual execution reports, and the application requirements.
+TC-003 and TC-004 contain multiple boundary scenarios. TC-006 and TC-007 still require execution confirmation. Update the summary after reviewing the remaining tests, actual execution reports, and application requirements.
 
-13. Shared Test Documentation
+---
+
+## 13. Shared Test Documentation
 
 The individual UI test cases and results are also maintained in the shared assignment tracker.
 
-- "Shared Test Dashboard – Google Sheets" (https://docs.google.com/spreadsheets/d/1xntmKoLF67ZUh8P6DqYbO3rtIwb53AHrxQc20ToV6T4/edit)
-- "Main Project README" (../README.md)
-- "Task Manager Application Repository" (https://github.com/ArunPragas2001/TaskManager)
-- "Student GitHub Profile" (https://github.com/HarshiSRanasingha)
+- [Shared Test Dashboard – Google Sheets](https://docs.google.com/spreadsheets/d/1xntmKoLF67ZUh8P6DqYbO3rtIwb53AHrxQc20ToV6T4/edit)
+- [Main Project README](../README.md)
+- [Task Manager Application Repository](https://github.com/ArunPragas2001/TaskManager)
+- [Student GitHub Profile](https://github.com/HarshiSRanasingha)
 
 These resources support collaboration, result tracking, and documentation of the overall Software Testing and Automation assignment.
 
-14. Assignment Submission Checklist
+---
+
+## 14. Assignment Submission Checklist
 
 Before submitting the project, verify each item.
 
@@ -456,7 +503,9 @@ Before submitting the project, verify each item.
 - [ ] README filenames and project structure checked against the repository.
 - [ ] All pending test cases executed or clearly identified as incomplete.
 
-15. Responsible Testing and Security
+---
+
+## 15. Responsible Testing and Security
 
 - Test only applications that are owned or explicitly authorized for testing.
 - Use disposable test accounts and test data.
@@ -466,7 +515,9 @@ Before submitting the project, verify each item.
 - Verify unexpected behaviour against application requirements before reporting defects.
 - Avoid claiming a test passed unless the execution evidence supports that result.
 
-16. Learning and Development
+---
+
+## 16. Learning and Development
 
 This project is part of my individual learning and practical work in Software Testing and Automation.
 
@@ -481,16 +532,18 @@ Through this assignment, I am developing practical experience in:
 - Defect identification and reporting.
 - Maven-based test execution and reporting.
 
-The project helps me apply software testing concepts to a real web application and understand the importance of validating expected behaviour, recording accurate results, and maintaining reliable test evidence.
+The project helps me apply software testing concepts to a web application and understand the importance of validating expected behaviour, recording accurate results, and maintaining reliable test evidence.
 
 ---
 
-<div align="center">Maintained by U.G.H.S. Ranasingha
+<div align="center">
+
+**Maintained by U.G.H.S. Ranasingha**
 
 Registration Number: 2022/ICT/78
 
 Testing Focus: Selenium Web UI Automation
 
-"GitHub Profile" (https://github.com/HarshiSRanasingha)
+[GitHub Profile](https://github.com/HarshiSRanasingha)
 
 </div>
