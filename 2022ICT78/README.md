@@ -1,4 +1,3 @@
-
 Tester 2022/ICT/78 — Selenium UI Testing: Task Manager
 
 <div align="center">"Java" (https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
@@ -9,48 +8,32 @@ Tester 2022/ICT/78 — Selenium UI Testing: Task Manager
 
 Automated UI testing for a Task Manager web application using Selenium WebDriver, Java, JUnit 5, and Maven.
 
-</div>
-
-## Project Overview
+</div>1. Project Overview
 
 This repository contains my individual Selenium UI automation work for the Task Manager application.
 
-The objective is to verify application functionality, validate user inputs, test boundary conditions, and identify unexpected application behaviour.
+The objective is to verify application functionality, validate user inputs, test boundary conditions, and identify unexpected application behaviour through automated browser testing.
 
-## Scope
+2. Testing Scope
 
-- Automate registration, login, and task-management user journeys.
-- Cover positive, negative, and boundary inputs.
-- Validate browser behavior and visible error messages.
-- Keep Java/Selenium test scripts, assertions, execution logs, and screenshots.
+The testing covers:
 
-## Existing materials
+- User registration and email validation.
+- Task management functionality.
+- Positive, negative, and boundary-value testing.
+- Browser validation and application error messages.
+- Task creation, editing, deletion, and status management.
+- Automated test execution and screenshot evidence.
 
-- `SeleniumUITestion_TaskManager/` — UI automation project.
-- `Screen Shots/` — supporting test evidence.
-
-The shared tracker documents outcomes, including partial passes for boundary-value tests.
-
-## Test case tracking
-
-Document at least five test cases, including scenario, preconditions, steps, input data, expected and actual results, status, and evidence.
-
-- [Shared test dashboard](https://docs.google.com/spreadsheets/d/1xntmKoLF67ZUh8P6DqYbO3rtIwb53AHrxQc20ToV6T4/edit)
-- [Main project README](../README.md)
-- [Application under test](https://github.com/ArunPragas2001/TaskManager)
-
-> Do not commit real passwords, access tokens, or other secrets.
-
-
-## The testing covers:
+Testing Techniques
 
 - Positive testing
 - Negative testing
-- Boundary value analysis
+- Boundary Value Analysis
 - Functional testing
 - Input validation testing
 
-## Tester Information
+3. Tester Information
 
 Detail| Information
 Student Name| U.G.H.S. Ranasingha
@@ -59,7 +42,7 @@ Course| Software Testing and Automation
 Testing Area| Selenium Java – UI Testing
 GitHub| "HarshiSRanasingha" (https://github.com/HarshiSRanasingha)
 
-3. Application Under Test
+4. Application Under Test
 
 Detail| Information
 Application Name| Task Manager
@@ -71,9 +54,9 @@ Dashboard Page| "http://localhost:8000/dashboard.html"
 
 The application provides user registration, login, task creation, task editing, task deletion, and task status management.
 
-4. Tools and Technologies
+5. Tools and Technologies
 
-Tool| Version
+Tool| Version / Purpose
 Java JDK| 21.0.13
 Selenium WebDriver| 4.51.0
 JUnit Jupiter| 5.13.4
@@ -81,7 +64,7 @@ Maven| Dependency and build management
 IntelliJ IDEA| 2026.2.4
 Google Chrome| Version 156
 
-5. Project Structure
+6. Project Structure
 
 SeleniumUITestion_TaskManager/
 │
@@ -123,7 +106,7 @@ SeleniumUITestion_TaskManager/
     ├── TC008_TaskStatusDisplayTest.png
     └── TC009_TaskCreationCancelTest.png
 
-6. Automated UI Test Coverage
+7. Automated UI Test Coverage
 
 Nine automated test case classes were created to verify different application features and input conditions.
 
@@ -138,29 +121,31 @@ T78/007| Delete an existing task| Positive
 T78/008| Verify tasks appear under the correct status| Positive
 T78/009| Cancel task creation without saving| Negative
 
-7. Test Execution Summary
+8. Test Execution Summary
+
+The following table summarises the observed results of the nine automated test cases.
 
 Test Case ID| Scenario| Execution Result
 T78/001| Email validation without "@"| PASS
 T78/002| Email without ".com"| PASS
-T78/003| Password length boundary| 5 PASS / 1 FAIL
-T78/004| Task-name length boundary| 4 PASS / 2 FAIL
+T78/003| Password length boundary| PARTIAL – 5 PASS / 1 FAIL
+T78/004| Task-name length boundary| PARTIAL – 4 PASS / 2 FAIL
 T78/005| Move task| PASS
 T78/006| Edit task| PASS
 T78/007| Delete task| PASS
 T78/008| Task status display| PASS
 T78/009| Cancel task creation| PASS
 
-Boundary testing observations:
+Boundary Testing Observations
 
-- T78/003: The 13-character password was accepted even though rejection was expected under the assumed 6–12 character range.
-- T78/004: The 2-character and 51-character task names were accepted even though rejection was expected under the assumed 3–50 character range.
+- T78/003 – Password length: The 13-character password was accepted, although rejection was expected under the assumed 6–12 character range.
+- T78/004 – Task-name length: The 2-character and 51-character task names were accepted, although rejection was expected under the assumed 3–50 character range.
 
-These are unexpected results against the assumed limits. Confirm the actual application requirements before reporting them as defects.
+These results are unexpected only in relation to the assumed limits. The actual application requirements should be confirmed before reporting these observations as defects.
 
-8. Screenshots and Test Evidence
+9. Screenshots and Test Evidence
 
-Screenshots are stored in the "Screen Shots" directory. Each screenshot is named according to its corresponding test case.
+Screenshots of the automated test executions are stored in the "Screen Shots/" directory.
 
 Test Case| Screenshot
 T78/001| "TC001_EmailValidationWithoutAtSign.png"
@@ -173,9 +158,11 @@ T78/007| "TC007_DeleteTaskTest.png"
 T78/008| "TC008_TaskStatusDisplayTest.png"
 T78/009| "TC009_TaskCreationCancelTest.png"
 
-9. Running Selenium Tests
+10. Running Selenium Tests
 
 Prerequisites
+
+Make sure the following are installed:
 
 - Java JDK 21
 - IntelliJ IDEA
@@ -189,7 +176,7 @@ git clone https://github.com/HarshiSRanasingha/SeleniumUITestion_TaskManager.git
 
 Step 2 – Open the Project
 
-Open the project in IntelliJ IDEA and allow Maven to download the required dependencies.
+Open the cloned project in IntelliJ IDEA and allow Maven to download the required dependencies.
 
 Step 3 – Start the Application
 
@@ -199,23 +186,27 @@ http://localhost:8000
 
 Step 4 – Run All Test Cases
 
+Open the terminal in the project directory and execute:
+
 mvn clean test
 
 Step 5 – Run an Individual Test Case
 
-For example, to run T78/009:
+For example, to execute T78/009:
 
 mvn -Dtest=TC009_TaskCreationCancelTest test
 
-Maven test reports are generated in:
+Test Reports
+
+Maven Surefire test reports are generated in:
 
 target/surefire-reports/
 
-10. Manual UI Test Cases
+11. Manual UI Test Cases
 
-At least five UI test cases should be documented for this submission.
+The following section documents nine UI test cases executed by tester 2022/ICT/78.
 
-Each test case includes its scenario, preconditions, test steps, test data, expected result, actual result, pass/fail status, testing type, tester information, comments, and testing date.
+Each test case includes its scenario, preconditions, test steps, test data, expected result, actual result, execution status, testing type, tester information, comments, and testing date.
 
 T78/001 – Email Validation Without "@"
 
@@ -243,11 +234,13 @@ Precondition| Registration page is open
 Test Steps| 1. Enter a valid full name. 2. Enter an email without ".com". 3. Enter a password. 4. Submit the form.
 Test Data| Name: Harshi; Email: "harshi@gmail"; Password: "Test123"
 Expected Result| The application rejects the email and remains on the registration page.
-Actual Result| Chrome accepted the email format, but application validation displayed: "User validation failed: email: Please add a valid email." The registration page remained open.
+Actual Result| Chrome accepted the email format, but application-level validation displayed: "User validation failed: email: Please add a valid email." The registration page remained open.
 Status| PASS
 Tester| 2022/ICT/78
 Comment| TC-002 PASSED. Application-level validation rejected the email. JUnit exited with code 0.
 Date Tested| 2026-11-01
+
+Note: This test checks the application's own email validation rule. A ".com" ending is not universally required for every valid email address.
 
 T78/003 – Password Length Boundary Testing
 
@@ -260,12 +253,12 @@ Test Steps| 1. Enter a valid name and email address. 2. Enter the specified pass
 Test Data| Name: Harshi; Email: "harshi@gmail.com"; Password lengths: 5, 6, 7, 11, 12, and 13 characters.
 Expected Result| Under the assumed 6–12 character range, 5 and 13 characters should be rejected, while 6, 7, 11, and 12 characters should be accepted.
 Actual Result| 5 characters: Rejected. 6 characters: Accepted. 7 characters: Accepted. 11 characters: Accepted. 12 characters: Accepted. 13 characters: Accepted.
-Status| 5 PASS / 1 FAIL
+Status| PARTIAL – 5 PASS / 1 FAIL
 Tester| 2022/ICT/78
 Comment| TC-003: Five of six password boundary executions passed. The 13-character password was accepted although rejection was expected under the assumed range.
 Date Tested| 2026-11-01
 
-Individual boundary test data:
+Individual Boundary Test Results
 
 Test ID| Password| Length| Expected| Actual| Status
 T78/003-01| "Test1"| 5| Reject| Rejected| PASS
@@ -286,12 +279,12 @@ Test Steps| 1. Register, log in, and open the dashboard. 2. Enter a task name wi
 Test Data| Task-name lengths: 2, 3, 4, 49, 50, and 51 characters.
 Expected Result| Under the assumed 3–50 character range, a 2-character and 51-character task name should be rejected. The other values should be accepted.
 Actual Result| 2 characters: Accepted. 3 characters: Accepted. 4 characters: Accepted. 49 characters: Accepted. 50 characters: Accepted. 51 characters: Accepted.
-Status| 4 PASS / 2 FAIL
+Status| PARTIAL – 4 PASS / 2 FAIL
 Tester| 2022/ICT/78
 Comment| TC-004: Four of six task-name boundary executions passed. The 2-character and 51-character names were accepted outside the assumed range.
 Date Tested| 2026-11-01
 
-Individual boundary test data:
+Individual Boundary Test Results
 
 Test ID| Task Name Length| Expected| Actual| Status
 T78/004-01| 2| Reject| Accepted| FAIL
@@ -309,7 +302,7 @@ Scenario| Check the action button on a task card
 Scenario Type| Positive
 Precondition| User is logged in and at least one task exists
 Test Steps| 1. Register a new user and open the dashboard. 2. Create a Selenium task in Pending. 3. Click Move to In Progress. 4. Verify that the task moves to In Progress and the next action changes to Move to Completed.
-Test Data| Task: Selenium task; Initial status: Pending; Action: Move to In Progress; Deadline: 2027-12-31 12:00; Priority: Medium
+Test Data| Task: Selenium task; Initial status: Pending; Action: Move to In Progress; Deadline: "2027-12-31 12:00"; Priority: Medium
 Expected Result| The task moves from Pending to In Progress and shows the next available Move to Completed action.
 Actual Result| Registration and dashboard opened successfully. The task was created in Pending. The Move button was clicked successfully, and the task appeared in In Progress with the next action displayed.
 Status| PASS
@@ -373,7 +366,7 @@ Scenario| Verify that a user can cancel task creation without saving
 Scenario Type| Negative
 Precondition| Application is running; user can register and access the dashboard
 Test Steps| 1. Register a new user. 2. Open the dashboard. 3. Click Add Task. 4. Enter task details. 5. Click Cancel. 6. Verify the modal closes. 7. Check that the task does not appear. 8. Refresh the dashboard and verify that the task remains absent.
-Test Data| Task: Cancelled Selenium Task; Deadline: 2027-12-31; Priority: Medium; Status: Pending
+Test Data| Task: Cancelled Selenium Task; Deadline: "2027-12-31"; Priority: Medium; Status: Pending
 Expected Result| The task creation modal closes, the task is not saved, and it remains absent after refreshing the dashboard.
 Actual Result| Modal opened, task details were entered, and Cancel was clicked. The modal closed and the task was absent before and after refresh.
 Status| PASS
@@ -381,6 +374,14 @@ Tester| 2022/ICT/78
 Comment| TC-009 PASSED. Task creation was cancelled successfully and no task was saved. JUnit exited with code 0.
 Date Tested| 2026-11-01
 
-Shared Test Case Tracker: "Open Google Sheets" (https://docs.google.com/spreadsheets/d/1xntmKoLF67ZUh8P6DqYbO3rtIwb53AHrxQc20ToV6T4/edit)
+---
 
-Main Group Repository: "README.md" (../README.md)
+Shared Test Case Tracker
+
+"Open Google Sheets – Shared Test Case Tracker" (https://docs.google.com/spreadsheets/d/1xntmKoLF67ZUh8P6DqYbO3rtIwb53AHrxQc20ToV6T4/edit)
+
+Main Group Repository
+
+"View Main Group README" (../README.md)
+
+«Security Note: Do not commit real passwords, access tokens, or other sensitive information to the repository.»
