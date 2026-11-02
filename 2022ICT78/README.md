@@ -544,6 +544,4 @@ Registration Number: 2022/ICT/78
 
 Testing Focus: Selenium Web UI Automation
 
-[GitHub Profile](https://github.com/HarshiSRanasingha)
-
 </div>
