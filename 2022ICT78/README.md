@@ -1,13 +1,16 @@
-Tester 2022/ICT/78 — Selenium UI Testing: Task Manager
+# Tester 2022/ICT/78 — Selenium UI Testing: Task Manager
 
-"Java 21" (https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-"Selenium 4.51.0" (https://img.shields.io/badge/Selenium-4.51.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-"JUnit 5.13.4" (https://img.shields.io/badge/JUnit-5.13.4-25A162?style=for-the-badge&logo=junit5&logoColor=white)
-"Maven 3" (https://img.shields.io/badge/Maven-3-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
-"Chrome" (https://img.shields.io/badge/Chrome-WebDriver-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java 21"/>
+  <img src="https://img.shields.io/badge/Selenium-4.51.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium 4.51.0"/>
+  <img src="https://img.shields.io/badge/JUnit-5.13.4-25A162?style=for-the-badge&logo=junit5&logoColor=white" alt="JUnit 5.13.4"/>
+  <img src="https://img.shields.io/badge/Maven-3-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven 3"/>
+  <img src="https://img.shields.io/badge/Chrome-WebDriver-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome WebDriver"/>
+</p>
 
-Automated UI testing for a Task Manager web application using Selenium WebDriver, Java, JUnit 5, and Maven.
-
+<p align="center">
+  Automated UI testing for a Task Manager web application using Selenium WebDriver, Java, JUnit 5, and Maven.
+</p>
 ---
 
 1. Project Overview
