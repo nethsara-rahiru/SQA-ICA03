@@ -9,6 +9,12 @@ Group assignment for Software Quality Assurance at the **University of Vavuniya*
 
 > This repository serves as the shared workspace for test scripts, evidence, reports, and assignment documentation. Test-case status and evidence should be verified against the tracker; a recorded “Pass” does not necessarily mean a defect-free application.
 
+## Application under test
+
+Our group selected **[TaskManager](https://github.com/ArunPragas2001/TaskManager)** as the application under test for this Software Quality Assurance assignment. It was originally developed as a **previous-semester individual project** by our team member **T. A. Pragas (2022/ICT/90)** ([GitHub: ArunPragas2001](https://github.com/ArunPragas2001)).
+
+The project is a task-management application with a RESTful API using **Node.js, Express.js, and MongoDB**. For this group assignment, we use it to practice and document **Selenium UI testing, Postman API testing, and Apache JMeter performance testing**. The original application repository remains separate from this repository, which contains the team's testing work and evidence.
+
 ## Course lecturer
 
 This group assignment was assigned by **Ms. Sivasoruby Kanapathipillai**, Faculty of Applied Science, University of Vavuniya. [Lecturer profile](https://fas.vau.ac.lk/dps/staff/ms-sivasoruby-kanapathipillai/).
