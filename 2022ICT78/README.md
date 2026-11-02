@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Chrome-WebDriver-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome WebDriver"/>
 </p>
 
-#<p align="center">
+<p align="center">
   Automated UI testing for a Task Manager web application using Selenium WebDriver, Java, JUnit 5, and Maven.
 </p>
 
